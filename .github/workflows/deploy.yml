@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to "master" if your repo uses that
+      - main
 
 permissions:
   contents: read
@@ -22,9 +22,10 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload website files
-        uses: actions/upload-pages-artifact@v2  # ✅ this is the correct version
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'  # Includes index.html, images/, etc.
+          path: '.'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+
